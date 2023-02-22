@@ -1,4 +1,4 @@
-<p align="center"><a href="[https://laravel.com](https://www.stwautomacao.com.br/)" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpawjV9LS6_Mf0_0uzN3KSAjO6ens6OdnePLbO71AII9U7FF3VVDhGKzEVT0Fh6lCHms&usqp=CAU" width="250" alt="Laravel Logo"></a></p>
+<p align="center"><a href="[]([https://www.stwautomacao.com.br/](https://www.stwautomacao.com.br/)"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpawjV9LS6_Mf0_0uzN3KSAjO6ens6OdnePLbO71AII9U7FF3VVDhGKzEVT0Fh6lCHms&usqp=CAU" width="250" alt="Laravel Logo"></a></p>
 
 # <p align="center">Projeto Recipe</p>
 
