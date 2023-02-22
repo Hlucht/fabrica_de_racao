@@ -15,8 +15,9 @@ class Recipe extends Model
         'name',
     ];
 
-    
-    public function recipe_ingredients(){
+
+    public function recipe_ingredients()
+    {
         return $this->hasMany(RecipeIngredient::class);
     }
 }
