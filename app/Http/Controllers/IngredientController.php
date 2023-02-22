@@ -29,15 +29,15 @@ class IngredientController extends Controller
     //Atualiza um ingrediente
     public function update(UpdateIngredientRequest $request, Ingredient $ingrediente): RedirectResponse
     {
-        Ingredient::find($ingrediente)->update($request);
+        $ingrediente->update($request->all());
         return redirect()->route('/ingredientes');
-    }
+    }   
 
     
     //Exclui um ingrediente
     public function destroy(Ingredient $ingrediente): RedirectResponse
     {
-        Ingredient::find($ingrediente)->delete();
+        $ingrediente->delete();
         return redirect()->route('/ingredientes');
     }
 }
