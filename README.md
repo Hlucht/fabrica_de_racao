@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="[https://laravel.com](https://www.stwautomacao.com.br/)" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpawjV9LS6_Mf0_0uzN3KSAjO6ens6OdnePLbO71AII9U7FF3VVDhGKzEVT0Fh6lCHms&usqp=CAU" width="250" alt="Laravel Logo"></a></p>
 
 # <p align="center">Projeto Recipe</p>
 
@@ -71,6 +71,7 @@ A página inicial é onde deve ser listado todas as receitas, nela há as funcio
 - Excluir receita
 - Editar receita
 - Editar adicionar ou remover um ingrediente dentro da receita 
+> No sistema assim que uma receita única é mostrada, os ingredientes que nela aparecem é apenas um exemplo, já que a funcionalidade de adicionar os inrgrediente não foi cumprida
 - Excluir ingrediente
 - Editar Ingrediente
     
