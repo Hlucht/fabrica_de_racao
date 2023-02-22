@@ -46,7 +46,8 @@
                     </td>
 
                     <modal-delete-component :message="`Deseja excluir a receita ${recipe.name} ?`"
-                        :id_modal="`del${recipe.id}`" button="Excluir" element="recipe" />
+                        :id_modal="`del${recipe.id}`" button="Excluir" element="recipe" :on_press="handle_delete"
+                        :id="recipe.id" />
                 </tr>
             </tbody>
         </table>
@@ -68,18 +69,21 @@ export default {
                 body: formData
             })
 
-            if (response.status == 201) {
-                const recipe = await response.json();
+            const recipe = await response.json();
+            window.location.href = `http://localhost:8000/receita/${recipe.id}`;
+        },
 
-                window.location.href = `http://localhost:8000/receita/${recipe.id}`;
-            } else {
-                console.error("Não foi possível cadastrar receita");
-            }
-        }
+        async handle_delete(id) {
+            const formData = new FormData();
+            formData.append('id', id);
+
+            const response = await fetch(`/receita/${id}`, {
+                method: "POST",
+                body: formData
+            })
+
+            location.reload();
+        },
     },
-
-    //Funcionalidade parcialmente finalizada 
-
-    //No momento apenas a INSERÇÃO funciona
 }
 </script>
