@@ -1,66 +1,79 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# <p align="center">Projeto Recipe</p>
 
-## About Laravel
+<p align="center">O projeto é oriundo de um desafio com propósito de avaliar a capacidade técnica como FullStack, se trata de um sistema para uma fábrica de ração, onde deve ser praticável a manipulação de suas receitas, contendo todas as operações necessárias para o cadastro das mesmas</p>  
+  
+  ## <p>Contexto :blue_book:</p>
+<p>O cliente produz em sua fábrica inúmeras receitas diferentes. Essas receitas possuem um conjunto de ingredientes que devem ser consumidos na ordem que são salvos. Atualmente, essa receita é feita em um Excel e impressa sempre que finalizada. Nesse sentido, deve-se elaborar uma solução que elimine a impressão em papel dessas receitas e facilite o gerenciamento das mesmas</p>  
+  
+  ## <p>Obejtivo :triangular_flag_on_post:</p>
+### 1. Receitas
+- [x] Listar receitas
+- [x] Listar uma determinada receita com seus respectivos ingredientes 
+- [x] Adicionar uma nova receita com seus respectivos ingredientes
+- [ ] Atualizar uma receita com seus respectivos ingredientes
+- [ ] Excluir uma receita
+    
+### 2. Ingredientes
+- [x] Listar os ingredientes
+- [x] Adicionar um novo ingrediente
+- [ ] Atualizar um ingrediente
+- [ ] Excluir um ingrediente  
+  
+## Pré-requisitos :fast_forward:
+ - Faça o download do [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+ - Faça o download do [Visual Studio Code](https://code.visualstudio.com/download)  
+   
+## Executar aplicação :arrow_forward:
+Crie um repositório local 
+> Abra seu repositório no terminal
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+No terminal escreva o seguinte comando: 
+```ruby
+git clone https://github.com/Hlucht/fabrica_de_racao.git
+```
+> Abra o Docker Desktop e espere ele inicializar
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Abra sua pasta com o projeto no VS Code
+> Inicialize um terminal no próprio VS Code `ctrl + "` e escreva o seguinte comando: 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```ruby
+docker-compose up --build
+```
+<p> :coffee: Pegue um café, vamos aguardar...</p> 
 
-## Learning Laravel
+<sup>Pode ser que demore, pois aqui será feito todas as instalações necessárias</sup>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Prontinho ! Aplicação rodando
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Acesse a partir da rota [https://localhost:8000/receitas](https://localhost:8000/receitas)  
+  
+## Navegando :sailboat:
+###  :rocket: *Fluxo Ideal*  
+A página inicial é onde deve ser listado todas as receitas, nela há as funcionalidades de **Cadastrar e Excluir uma receita**  
+  
+  - **Cadastrar:** Assim que criada a nova receita, o fluxo da aplicação é o seguinte, o redirecionamento após o cadastro mostra a receita recém criada `localhost:8000/receita/id_receita` e nessa página seria possível incluir os ingredientes respectivos a ela, da mesma maneira que a quantidade de cada um deles podendo também organizar a ordem. Salva as alterações a próxima tela voltaria a ser de receitas `localhost:8000/receitas`  
+  - Também é possível acessar uma única receita clicando no nome dela  
+    
+  Na página que lista uma única receita há as funcionalidades **Editar a receita, Adicionar um ingrediente, Remover um ingrediente, Editar um ingrediente e Editar a ordem**  
+    
+   - **Editar a receita:** Edita o nome da receita
+   - **Editar ingrediente:** Edita a quantidade prevista em KG do ingrediente
+   - **Editar a ordem:** Permite que você arraste o ingrediente para reordena-los  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+      <sup>Acionando a funcionalidade **Salvar** a próxima tela voltaria a ser de receitas `localhost:8000/receitas`</sup> 
+      
+  Na página que lista os ingredientes há as funcionalidades **Editar ingrediente, Adicionar um ingrediente, Excluir um ingrediente**
+  
+    
+### *:warning: Não implementado*  
+- Excluir receita
+- Editar receita
+- Editar adicionar ou remover um ingrediente dentro da receita 
+- Excluir ingrediente
+- Editar Ingrediente
+    
+> As funcionalidades não vieram a ser implementadas por falta de competência técnica em relação as linguagens escolhidas, o desafio propôs algumas tecnologias para o desenvolvimento, sendo assim abracei o desafio como um todo. Porém os obstáculos encontrados foi em como relacionar e realizar a passagem de dados entre o Vue.js e o Laravel, a questão de roteamento e os verbos HTTP das funcões em Laravel  
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> Partindo do ponto de que eu detinha um breve conhecimento de Vue.js e nada de Laravel, dispus uma parte do tempo para um curso introdutório de Laravel, as outras referências se basearam nas documentações e em pesquisas genéricas
