@@ -1,7 +1,8 @@
 <!-- Página de Ingredientes -->
 <template>
     <nav-component />
-    <modal-flex-component title="Adicionar ingrediente" id_modal="modalNew" title_input="Descrição" button="Salvar" class_button="success" :on_press="handle_create"/>
+    <modal-flex-component title="Adicionar ingrediente" id_modal="modalNew" title_input="Descrição" button="Salvar"
+        class_button="success" :on_press="handle_create" />
 
     <div class="w-75 p-3 h-75 d-block mx-auto">
         <table class="table table-striped mt-5">
@@ -51,7 +52,8 @@
                     </td>
 
                     <modal-delete-component :message="`Deseja excluir o ingrediente ${ingredient.description} ?`"
-                        :id_modal="`del${ingredient.id}`" button="Excluir" element="ingredient" />
+                        :id_modal="`del${ingredient.id}`" button="Excluir" element="ingredient" :on_press="handle_delete"
+                        :id="ingredient.id" />
 
                     <modal-flex-component :title="`Editar ingrediente | ${ingredient.description}`"
                         :id_modal="ingredient.id" title_input="Descrição" button="Salvar alteração" class_button="primary"
@@ -68,7 +70,7 @@ export default {
         ingredients: Array,
     },
     methods: {
-        async handle_create (value){ 
+        async handle_create(value) {
             const formData = new FormData();
             formData.append('description', value);
 
@@ -76,10 +78,21 @@ export default {
                 method: "POST",
                 body: formData
             })
-            
+
             location.reload();
         },
-    },
+
+        async handle_delete(id) {
+            const formData = new FormData();
+            formData.append('id', id);
+
+            const response = await fetch(`/ingrediente/${id}`, {
+                method: "POST",
+                body: formData
+            })
+
+            location.reload();
+        },
 
         async handle_update(value, id_ingredient) {
             const formData = new FormData();
