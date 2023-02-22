@@ -54,7 +54,8 @@
                         :id_modal="`del${ingredient.id}`" button="Excluir" element="ingredient" />
 
                     <modal-flex-component :title="`Editar ingrediente | ${ingredient.description}`"
-                        :id_modal="`${ingredient.id}`" title_input="Descrição" button="Salvar alteração" class_button="primary" :on_press="handle_update"/>
+                        :id_modal="ingredient.id" title_input="Descrição" button="Salvar alteração" class_button="primary"
+                        :on_press="handle_update" :value="ingredient.id" :id="ingredient.id" />
                 </tr>
             </tbody>
         </table>
@@ -80,8 +81,18 @@ export default {
         },
     },
 
-    // Funcionalidade parcialmente finalizada
+        async handle_update(value, id_ingredient) {
+            const formData = new FormData();
+            formData.append('id', id_ingredient);
+            formData.append('description', value);
 
-    //No momento apenas a INSERÇÃO funciona
+            const response = await fetch(`/ingrediente/edicao/${id_ingredient}`, {
+                method: "POST",
+                body: formData
+            })
+
+            location.reload();
+        },
+    },
 }
 </script>
