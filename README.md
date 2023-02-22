@@ -10,16 +10,16 @@
   ## <p>Obejtivo :triangular_flag_on_post:</p>
 ### 1. Receitas
 - [x] Listar receitas
-- [x] Listar uma determinada receita com seus respectivos ingredientes 
+- [ ] Listar uma determinada receita com seus respectivos ingredientes 
 - [x] Adicionar uma nova receita com seus respectivos ingredientes
-- [ ] Atualizar uma receita com seus respectivos ingredientes
-- [ ] Excluir uma receita
+- [x] Atualizar uma receita com seus respectivos ingredientes
+- [x] Excluir uma receita
     
 ### 2. Ingredientes
 - [x] Listar os ingredientes
 - [x] Adicionar um novo ingrediente
-- [ ] Atualizar um ingrediente
-- [ ] Excluir um ingrediente  
+- [x] Atualizar um ingrediente
+- [x] Excluir um ingrediente  
   
 ## Pré-requisitos :fast_forward:
  - Faça o download do [Docker Desktop](https://www.docker.com/products/docker-desktop/)
@@ -68,13 +68,9 @@ A página inicial é onde deve ser listado todas as receitas, nela há as funcio
   
     
 ### *:warning: Não implementado*  
-- Excluir receita
-- Editar receita
 - Editar adicionar ou remover um ingrediente dentro da receita 
 > No sistema assim que uma receita única é mostrada, os ingredientes que nela aparecem é apenas um exemplo, já que a funcionalidade de adicionar os inrgrediente não foi cumprida
-- Excluir ingrediente
-- Editar Ingrediente
     
-> As funcionalidades não vieram a ser implementadas por falta de competência técnica em relação as linguagens escolhidas, o desafio propôs algumas tecnologias para o desenvolvimento, sendo assim abracei o desafio como um todo. Porém os obstáculos encontrados foi em como relacionar e realizar a passagem de dados entre o Vue.js e o Laravel, a questão de roteamento e os verbos HTTP das funcões em Laravel  
+> As funcionalidades não vieram a ser implementadas por falta de competência técnica em relação as linguagens escolhidas, o desafio propôs algumas tecnologias para o desenvolvimento, sendo assim abracei o desafio como um todo. Porém os obstáculos encontrados foi na relação das receitas com os ingredientes, em como seria registrado a ordem no banco de dados e em como trazer os rescpectivos ingredientes à tela
 
 > Partindo do ponto de que eu detinha um breve conhecimento de Vue.js e nada de Laravel, dispus uma parte do tempo para um curso introdutório de Laravel, as outras referências se basearam nas documentações e em pesquisas genéricas
