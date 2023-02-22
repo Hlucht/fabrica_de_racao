@@ -11,7 +11,7 @@
                     <form>
                         <div class="mb-3">
                             <label for="amount" class="col-form-label">Previsto em KG:</label>
-                            <input type="number" class="form-control" id="amount">
+                            <input type="number" class="form-control" id="amount" v-model="value">
                         </div>
                     </form>
                 </div>
@@ -25,10 +25,20 @@
 
 <script>
 export default {
-    props: {
-        title: String,
-        id_modal: String,
+    props: [
+        "title",
+        "id_modal",
+        "id_ingredient",
+        "id_recipe",
+    ],
+    data() {
+        return {
+            value: "",
+        }
     },
+    methods: {
+
+    }
 
     //Funcionalidade não finalizada
 }

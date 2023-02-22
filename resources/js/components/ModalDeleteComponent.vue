@@ -10,7 +10,8 @@
                     <h5>{{ message }}</h5>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="delete" @click="delete_recipe">{{ button }}</button>
+                    <button type="button" class="btn btn-danger" id="delete" @click="() => handle_press()">{{ button
+                    }}</button>
                 </div>
             </div>
         </div>
@@ -19,13 +20,18 @@
 
 <script>
 export default {
-    props: {
-        message: String,
-        id_modal: String,
-        button: String,
-        element: String,
-    },
-
-    //Funcionalidade não finalizada
+    props: [
+        "message",
+        "id_modal",
+        "button",
+        "element",
+        "on_press",
+        "id",
+    ],
+    methods: {
+        handle_press() {
+            this.on_press(this.id);
+        }
+    }
 }
 </script>

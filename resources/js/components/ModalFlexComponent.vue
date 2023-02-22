@@ -16,7 +16,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" :class="`btn btn-${class_button}`" @click="() => handle_press()">{{ button }}</button>
+                    <button type="button" :class="`btn btn-${class_button}`" @click="() => handle_press()">{{ button
+                    }}</button>
                 </div>
             </div>
         </div>
@@ -32,20 +33,17 @@ export default {
         "button",
         "class_button",
         "on_press",
+        "id"
     ],
-    data(){
+    data() {
         return {
             value: "",
         }
     },
     methods: {
-        handle_press(){
-            this.on_press(this.value);
+        handle_press() {
+            this.on_press(this.value, this.id);
         }
     }
-
-    //Funcionalidade parcialmente finalizada 
-
-    //No momento apenas a INSERÇÃO funciona
 }
 </script>
