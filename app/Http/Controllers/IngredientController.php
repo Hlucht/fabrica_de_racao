@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreIngredientRequest;
-use App\Http\Requests\UpdateIngredientRequest;
-use Illuminate\Http\RedirectResponse;
 use App\Models\Ingredient;
+use Illuminate\Http\Request;
 
 class IngredientController extends Controller
 {
@@ -27,17 +26,15 @@ class IngredientController extends Controller
 
 
     //Atualiza um ingrediente
-    public function update(UpdateIngredientRequest $request, Ingredient $ingrediente): RedirectResponse
+    public function update(Request $request, string $ingredient)
     {
-        $ingrediente->update($request->all());
-        return redirect()->route('/ingredientes');
-    }   
+        Ingredient::find($ingredient)->update($request->all());
+    }
 
-    
+
     //Exclui um ingrediente
-    public function destroy(Ingredient $ingrediente): RedirectResponse
+    public function destroy(string $ingredient)
     {
-        $ingrediente->delete();
-        return redirect()->route('/ingredientes');
+        Ingredient::find($ingredient)->delete();
     }
 }
