@@ -103,6 +103,20 @@ export default defineComponent({
             ],
         }
     },
+    methods: {
+        async handle_update(value, id_recipe) {
+            const formData = new FormData();
+            formData.append('id', id_recipe);
+            formData.append('name', value);
+
+            const response = await fetch(`/receita/edicao/${id_recipe}`, {
+                method: "POST",
+                body: formData
+            })
+
+            console.log(this.ingredients_recipe);
+            location.reload();
+        },
 
     //Funcionalidade não finalizada - Ingredientes renderizados como exemplo 
 })
