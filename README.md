@@ -53,7 +53,7 @@ Acesse a partir da rota [https://localhost:8000/receitas](https://localhost:8000
 ###  :rocket: *Fluxo Ideal*  
 A página inicial é onde deve ser listado todas as receitas, nela há as funcionalidades de **Cadastrar e Excluir uma receita**  
   
-  - **Cadastrar:** Assim que criada a nova receita, o fluxo da aplicação é o seguinte, o redirecionamento após o cadastro mostra a receita recém criada `localhost:8000/receita/id_receita` e nessa página seria possível incluir os ingredientes respectivos a ela, da mesma maneira que a quantidade de cada um deles podendo também organizar a ordem. Salva as alterações a próxima tela voltaria a ser de receitas `localhost:8000/receitas`  
+  - **Cadastrar:** Assim que criada a nova receita, o fluxo da aplicação é o seguinte, o redirecionamento após o cadastro mostra a receita recém criada `localhost:8000/receita/id_receita` e nessa página seria possível incluir os ingredientes respectivos a ela, da mesma maneira que a quantidade de cada um deles podendo também organizar a ordem. Salva as alterações a próxima tela voltaria a ser de a receitas `localhost:8000/receitas`  
   - Também é possível acessar uma única receita clicando no nome dela  
     
   Na página que lista uma única receita há as funcionalidades **Editar a receita, Adicionar um ingrediente, Remover um ingrediente, Editar um ingrediente e Editar a ordem**  
@@ -68,9 +68,12 @@ A página inicial é onde deve ser listado todas as receitas, nela há as funcio
   
     
 ### *:warning: Não implementado*  
-- Editar adicionar ou remover um ingrediente dentro da receita 
+- Editar adicionar ou remover um ingrediente dentro da receita: Fazer a associação de uma receita a um ou mais ingredientes foi realizada porém não mostra na página
 > No sistema assim que uma receita única é mostrada, os ingredientes que nela aparecem é apenas um exemplo, já que a funcionalidade de adicionar os inrgrediente não foi cumprida
     
 > As funcionalidades não vieram a ser implementadas por falta de competência técnica em relação as linguagens escolhidas, o desafio propôs algumas tecnologias para o desenvolvimento, sendo assim abracei o desafio como um todo. Porém os obstáculos encontrados foi na relação das receitas com os ingredientes, em como seria registrado a ordem no banco de dados e em como trazer os rescpectivos ingredientes à tela
 
-> Partindo do ponto de que eu detinha um breve conhecimento de Vue.js e nada de Laravel, dispus uma parte do tempo para um curso introdutório de Laravel, as outras referências se basearam nas documentações e em pesquisas genéricas
+> Partindo do ponto de que eu detinha um breve conhecimento de Vue.js e nada de Laravel, dispus uma parte do tempo para um curso introdutório de Laravel, as outras referências se basearam nas documentações e em pesquisas genéricas  
+
+Intenções 
+Fazer tratamento de erro nas requisições 
