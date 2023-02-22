@@ -1,8 +1,8 @@
 <!-- Página de receita com seus ingredientes -->
 <template>
     <nav-component />
-    <modal-flex-component :title="`Editar Receita | ${recipe.name}`" id_modal="editRecipe" title_input="Nome" button="Salvar alteração" class_button="primary"/>
-    <modal-add-ingredient-component title="Adicionar ingrediente" id_modal="modalAddIngredient" :ingredients="ingredients" :recipe_id="recipe.id"/>
+    <modal-flex-component :title="`Editar Receita | ${recipe.name}`" id_modal="editRecipe" title_input="Nome"
+        button="Salvar alteração" class_button="primary" :on_press="handle_update" :id="recipe.id" />
 
     <div class="w-75 p-3 h-75 d-block mx-auto">
         <table class="table table-striped mt-5">
@@ -93,10 +93,11 @@ export default defineComponent({
     props: {
         recipe: Object,
         ingredients: Array,
-        // recipe_ingredients: Array,
+        ingredients_recipe: Array,
     },
     data() {
         return {
+            id_recipe: this.recipe.id,
             recipe_ingredients: [
                 { ingredient_id: '1', description: 'Milho', amount: 100 },
                 { ingredient_id: '3', description: 'Farinha', amount: 250 }
