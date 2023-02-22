@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRecipeRequest;
-use App\Http\Requests\UpdateRecipeRequest;
-use Illuminate\Http\RedirectResponse;
 use App\Models\Recipe;
+use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
@@ -15,7 +14,7 @@ class RecipeController extends Controller
         $recipes = Recipe::all();
         return view('recipes',  ['recipes' => $recipes]);
     }
-   
+
 
     //Registra uma nova receita
     public function store(StoreRecipeRequest $request)
@@ -27,17 +26,15 @@ class RecipeController extends Controller
 
 
     //Atualiza uma receita
-    public function update(UpdateRecipeRequest $request, Recipe $recipe): RedirectResponse
+    public function update(Request $request, string $recipe)
     {
-        Recipe::find($recipe)->update($request);
-        return redirect()->route('/receitas');
+        Recipe::find($recipe)->update($request->all());
     }
 
 
     //Exclui uma receita
-    public function destroy(Recipe $recipe): RedirectResponse
+    public function destroy(string $recipe)
     {
         Recipe::find($recipe)->delete();
-        return redirect()->route('/receitas');
     }
 }
