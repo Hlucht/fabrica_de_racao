@@ -3,6 +3,8 @@
     <nav-component />
     <modal-flex-component :title="`Editar Receita | ${recipe.name}`" id_modal="editRecipe" title_input="Nome"
         button="Salvar alteração" class_button="primary" :on_press="handle_update" :id="recipe.id" />
+    <modal-add-ingredient-component title="Adicionar ingrediente" id_modal="modalAddIngredient" :ingredients="ingredients"
+        :id_recipe="recipe.id" :on_press="handle_addIngredient" />
 
     <div class="w-75 p-3 h-75 d-block mx-auto">
         <table class="table table-striped mt-5">
@@ -14,12 +16,12 @@
                     <td>
                         <div class="d-md-flex justify-content-md-end m-2">
                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                            :data-bs-target="`#editRecipe`">
-                            <i class="fa-solid fa-pen"></i>
-                            Editar Receita
-                        </button>
+                                :data-bs-target="`#editRecipe`">
+                                <i class="fa-solid fa-pen"></i>
+                                Editar Receita
+                            </button>
                         </div>
-                        
+
                     </td>
 
                 </tr>
@@ -72,13 +74,18 @@
                     </td>
 
                     <modal-edit-amount-component :title="`Editar ingrediente | ${recipe_ingredient.description}`"
-                        :id_modal="`${recipe_ingredient.ingredient_id}`" />
+                        :id_modal="recipe_ingredient.ingredient_id" />
 
                     <modal-delete-component :message="`Deseja remover o ingrediente ${recipe_ingredient.description} ?`"
-                        :id_modal="`del${recipe_ingredient.ingredient_id}`" button ="Remover" element="recipe ingredient"/>
+                        :id_modal="`del${recipe_ingredient.ingredient_id}`" button="Remover" element="recipe ingredient" />
                 </tr>
             </draggable>
         </table>
+
+        <div class="d-md-flex justify-content-md-end mt-5">
+            <button type="button" class="btn btn-success btn">Salvar</button>
+        </div>
+
     </div>
 </template>
 
@@ -118,6 +125,22 @@ export default defineComponent({
             console.log(this.ingredients_recipe);
             location.reload();
         },
+
+        async handle_addIngredient(id_ingredient, id_recipe) {
+            const formData = new FormData();
+            formData.append('order', 0);
+            formData.append('amount', 0);
+            formData.append('ingredient_id', id_ingredient);
+            formData.append('recipe_id', id_recipe);
+
+            const response = await fetch('/receita', {
+                method: "POST",
+                body: formData
+            })
+
+            location.reload();
+        },
+    },
 
     //Funcionalidade não finalizada - Ingredientes renderizados como exemplo 
 })
