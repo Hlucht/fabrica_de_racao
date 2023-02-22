@@ -8,7 +8,12 @@ class VerifyCsrfToken extends Middleware
 {
     protected $except = [
         '/ingredientes',
+        '/ingrediente/*',
+        '/ingrediente/edicao/*',
+
         '/receitas',
         '/receita',
+        '/receita/*',
+        '/receita/edicao/*',
     ];
 }
