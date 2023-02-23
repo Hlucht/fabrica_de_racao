@@ -76,7 +76,7 @@ A página inicial é onde deve ser listado todas as receitas, nela há as funcio
 
 > Partindo do ponto de que eu detinha um breve conhecimento de Vue.js e nada de Laravel, dispus uma parte do tempo para um curso introdutório de Laravel, as outras referências se basearam nas documentações e em pesquisas genéricas  
 
-> No sistema não foi factível o tratamento de erro ou alertas
+> No sistema não foi factível o tratamento de erro, o campo de pesquisa e a páginação
 
 <h4 align="center">:confetti_ball: Nessa última semana me dediquei ao máximo para atender as expectativas, enfrentando o desafio de aprender um novo framework e me aprofundar em outras tecnologias, ao mesmo tempo que criava um projeto do zero. Foi uma boa experiência e com certeza bons aprendizados !</h4>
 
