@@ -65,7 +65,8 @@ A página inicial é onde deve ser listado todas as receitas, nela há as funcio
       <sup>Acionando a funcionalidade **Salvar** a próxima tela voltaria a ser de receitas `localhost:8000/receitas`</sup> 
       
   Na página que lista os ingredientes há as funcionalidades **Editar ingrediente, Adicionar um ingrediente, Excluir um ingrediente**
-  
+ 
+ > Havia também a intenção de criar uma páginação dos elementos, realizar o tratamento de erros gerando alertas, e também um campo de pesquisa nas páginas.
     
 ### *:warning: Não implementado*  
 - *Editar adicionar ou remover um ingrediente dentro da receita*: fazer a associação de uma receita a um ou mais ingredientes foi realizada porém esses dados não são trazidos à tela
